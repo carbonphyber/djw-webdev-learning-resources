@@ -1,6 +1,11 @@
 Gaia Tutorials
 ==============
 
+Scope and Applicability
+-----------------------
+
+This document is specific to Gaia's homegrown codebase.  If you don't have Gaia's code or don't know what Gaia is, this document is useless to you.
+
 First Day
 ---------
 
@@ -12,6 +17,8 @@ First Day
 
 Hello World (First Week)
 ------------------------
+
+(unfinished)
 
 1. ShortCircuit Wiki
 2. Create a skeleton app `myfirstweek`.

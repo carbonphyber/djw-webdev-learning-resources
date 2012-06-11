@@ -12,6 +12,7 @@ This is the minimal code required to create an HTML5 web page:
     <!DOCTYPE html>
     <html>
         <head>
+            <meta http-equiv="content-type" content="text/html; charset=utf8" />
             <title>Hello World.</title>
         </head>
         <body>
