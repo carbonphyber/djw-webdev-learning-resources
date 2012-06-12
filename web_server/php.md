@@ -22,7 +22,7 @@ Copy-paste this content to a file `helloworld.php`:
 ```php
 <?php
 echo "Hello World\n";
-//?>
+// comment: this last line is optional, but useful for this Markdown document ?>
 ```
 
 Now execute this file using PHP: ```php helloworld.php```.  You should see the output ```Hello World.```
@@ -30,11 +30,13 @@ Now execute this file using PHP: ```php helloworld.php```.  You should see the o
 Language Basics
 ---------------
 
-PHP is a procedural language with Object-Oriented features.  The PHP library has a fantastic number of global functions and constants (which is generally considered bad programming).
+PHP is a procedural language with Object-Oriented features.  The PHP library has a huge number of global functions and constants -- which is bad programming.
 
-PHP is a loosely typed language with no need for variable instantiation.  Uninstantiated variables are assumed to be of type `null`.
+PHP is a loosely typed language with no need for variable instantiation.  Uninstantiated variables are of type `null`.
 
-PHP code is interpreted and compiled (in one step), on every script execution. There exist opcache libraries such as EA and APC.
+PHP code is interpreted and compiled (in one step), on every script execution (which is very expensive on a web server). There exist opcache libraries such as EA and APC which will store the "compiled" opcaches, bypassing the need to re-interpret the file unless it changes.
+
+The language is written on top of C and shares many features and function names as C.
 
 Data Types
 ----------
@@ -49,6 +51,8 @@ Data Types
  * `object` - a class instance
  * `function` - new to PHP 5.3, functions are "first-class".
  * `callable` - a way to reference a function.
+
+@see [Types at PHP.net](http://www.php.net/manual/en/language.types.php)
 
 Loose Types
 -----------
@@ -65,10 +69,15 @@ There are many values that are considered "falsy".  For example:
  * `'0'` - the string that contains the character 0 / zero
  * `array()` - the empty array
 
+Two falsy variables are "Equal" to each other but not necessarily "Identical":
 
+ * `null == false // statement is true`
+ * `null === false // statement is false because the data types of the operands are different`
+ * `null == 0 // statement is true`
+ * `null == array() // statement is true`
+ * etc. with all variants of the "falsy" values mentioned above
 
-... to be continued...
-
+Think of the "equals" operator as if it where this identity: `(!A) === (!B) // statement first coerces A and B into booleans then compares the resulting booleans`.
 
 Dynamic Linking
 ---------------
@@ -89,6 +98,24 @@ PHP is a mishmash of many different languages. As such, there are at least three
  * `# this is a single-line comment` - shell-style comments
  * `/* this is a multi-line comment */` - C-style multi-line comments
 
+Case Sensitivity
+----------------
+
+PHP's interpreter is case-sensitive for some tokens and case-insensitive for others.  Generally speaking, the interpreter will allow for case-insensitivity for class names and class members.  Local and global variables are case-sensitive (strict).
+
+```php
+class MyExCePtIoN extends ExCePtIoN {} // valid, even though the "ExCePtIoN" class is defined by PHP as "class Exception"
+
+throw new mYeXcEpTiOn("some exception message"); // valid because class names are case-insensitive
+```
+
+```php
+$foo = "my local variable"; // defined as lower-case
+
+echo $FOO . "\n"; // INCORRECT: used as upper-case.  "I don't think it works the way you think it works."
+```
+
+
 Validation Operators and Functions
 ----------------------------------
 
@@ -105,3 +132,4 @@ Some suggested helper operators and functions for validation
  * `preg_match` - A regular-expression test function. @see [PCRE patterns at PHP.net](http://us3.php.net/manual/en/pcre.pattern.php)
 
 
+to be continued...
