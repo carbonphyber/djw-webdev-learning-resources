@@ -55,6 +55,18 @@ Loose Types
 
 PHP is a loosely-typed language. This means that using the double-equals operator to test equality will test only the value and not the type.  If the operands are two different data types, one or both will be coerced.
 
+There are many values that are considered "falsy".  For example:
+
+ * `null`
+ * `false` - boolean
+ * `0` - integer
+ * `0.00` - float
+ * `''` - empty string
+ * `'0'` - the string that contains the character 0 / zero
+ * `array()` - the empty array
+
+
+
 ... to be continued...
 
 
@@ -73,17 +85,23 @@ Comments
 
 PHP is a mishmash of many different languages. As such, there are at least three accepted commenting styles:
 
- * `// this is a comment` - single-line comments
- * `/* this is a comment */` - C-style multi-line comments
- * `# this is a comment` - shell-style comments
+ * `// this is a single-line comment` - single-line comments
+ * `# this is a single-line comment` - shell-style comments
+ * `/* this is a multi-line comment */` - C-style multi-line comments
 
-String Validation
------------------
+Validation Operators and Functions
+----------------------------------
 
-Some suggested helper functions for validation
+Some suggested helper operators and functions for validation
 
- * `ctype_alnum` - 
- * `ctype_digit` - 
+ * `==` and `===` - "Equality" operator and "Identical" operator. @see [PHP Comparison Operators at PHP.net](http://us3.php.net/manual/en/language.operators.comparison.php)
+ * `empty` - Function detects if a variable has a falsy value. Note: you _must_ pass a variable (with a variable identifier) to this function... you can't use the return value of a function or a null/boolean/integer/string/array literal.
+ * `isset` - Function to detect if a value is "not NULL".  Warning - this function's return value has changed a few times in recent versions.
+ * `ctype_alnum` - Does the input consist entirely of alphanumeric characters? Note: requires a string as input -- make sure to cast input into a string.
+ * `ctype_digit` - Does the input consist entirely of decimal (0-9) characters? Note: requires a string as input -- make sure to cast input into a string.
+ * `strcmp` - String comparison function (implemented like the C-ancestor).  Returns 0 iff the two parameters are string-identical.
+ * `strpos` - Substring position detection.  "What position inside the first parameter+string is the second parameter+string?" (implemented like the C-ancestor... except for the return value).  Returns FALSE if not found; Returns 0 iff the second parameter begins at the first character inside of the first parameter. Use `===` to compare the result of this function!!!
+ * `in_array` - Does the first parameter exist as an element in the second parameter?
+ * `preg_match` - A regular-expression test function. @see [PCRE patterns at PHP.net](http://us3.php.net/manual/en/pcre.pattern.php)
 
-... to be continued...
 
