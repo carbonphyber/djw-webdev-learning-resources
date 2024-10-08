@@ -8,7 +8,7 @@ A git repo of programming and web learning resources I've collected over the yea
 
 Curated by CarbonPhyber (David Wortham).
 
- * [https://github.com/carbonphyber/](CarbonPhyber on GitHub.com)
+ * [CarbonPhyber on GitHub.com](https://github.com/carbonphyber/)
 
 Technologies and Languages
 --------------------------
@@ -61,10 +61,10 @@ Licenses
 
 All non-code text and links within this repository are "Create Commons Attribution 3.0" licensed:
 
- * [http://creativecommons.org/licenses/by/3.0/](Create Commons Attribution 3.0)
+ * [Create Commons Attribution 3.0](http://creativecommons.org/licenses/by/3.0/)
 
 All example code within this repo was originally written by the repository authors and is licensed under the MIT "Expat License":
 
- * [http://www.opensource.org/licenses/MIT](MIT License at OpenSource.org)
+ * [MIT License at OpenSource.org](http://www.opensource.org/licenses/MIT)
 
 All submissions to this repo must use originally written code and that code must adhere to the conditions of the MIT "Expat License".
